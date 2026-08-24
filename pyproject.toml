@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyturboquant-gpu"
+version = "0.1.0"
+description = "GPU-accelerated implementation of TurboQuant data-oblivious vector quantization (arXiv:2504.19874)"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.9"
+authors = [
+    {name = "pyturboquant contributors"},
+]
+keywords = [
+    "vector-quantization",
+    "kv-cache",
+    "llm",
+    "compression",
+    "turboquant",
+    "quantization",
+    "gpu",
+    "pytorch",
+    "cuda",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/pyturboquant/pyturboquant-gpu"
+Documentation = "https://github.com/pyturboquant/pyturboquant-gpu#readme"
+Repository = "https://github.com/pyturboquant/pyturboquant-gpu"
+Issues = "https://github.com/pyturboquant/pyturboquant-gpu/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
