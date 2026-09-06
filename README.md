@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./assets/banner.svg" alt="pyturboquant-gpu banner" width="100%">
+</div>
+
 # pyturboquant-gpu
 
 GPU-accelerated implementation of **TurboQuant**, a data-oblivious vector quantization algorithm for compressing high-dimensional vectors with near-optimal distortion. Built on **PyTorch** for seamless GPU acceleration.

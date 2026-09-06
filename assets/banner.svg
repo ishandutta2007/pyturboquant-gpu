@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="50%" stop-color="#0d1127" />
+      <stop offset="100%" stop-color="#050711" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#7000FF" />
+      <stop offset="100%" stop-color="#FF007A" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#E2F1FF" />
+      <stop offset="80%" stop-color="#70E1FF" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+
+    <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="tensor-pulse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Filters for Glow Effects -->
+    <filter id="glow-heavy" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur1" />
+      <feGaussianBlur stdDeviation="30" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-subtle" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.75" stroke-opacity="0.45" />
+      <circle cx="40" cy="40" r="1" fill="#38BDF8" fill-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulse-ring {
+      0% { r: 52px; opacity: 0.8; stroke-width: 2.5px; }
+      50% { r: 75px; opacity: 0.2; stroke-width: 1px; }
+      100% { r: 52px; opacity: 0.8; stroke-width: 2.5px; }
+    }
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes spin-reverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes beam-dash {
+      0% { stroke-dashoffset: 240; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes float-gentle {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes shimmer {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.85; }
+      100% { opacity: 0.3; }
+    }
+    @keyframes float-dot {
+      0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      50% { transform: translateY(-12px) translateX(6px); opacity: 0.9; }
+      100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+    }
+
+    .pulse-ring-anim {
+      animation: pulse-ring 4s ease-in-out infinite;
+      transform-origin: 1010px 170px;
+    }
+    .spin-clock {
+      animation: spin-slow 24s linear infinite;
+      transform-origin: 1010px 170px;
+    }
+    .spin-counter {
+      animation: spin-reverse 16s linear infinite;
+      transform-origin: 1010px 170px;
+    }
+    .stream-line {
+      stroke-dasharray: 20, 16;
+      animation: beam-dash 3s linear infinite;
+    }
+    .stream-line-rev {
+      stroke-dasharray: 15, 12;
+      animation: beam-dash 4s linear infinite reverse;
+    }
+    .floating-container {
+      animation: float-gentle 5s ease-in-out infinite;
+    }
+    .shimmer-glow {
+      animation: shimmer 3.5s ease-in-out infinite;
+    }
+    .particle-1 { animation: float-dot 3.2s ease-in-out infinite; }
+    .particle-2 { animation: float-dot 4.5s ease-in-out infinite 1s; }
+    .particle-3 { animation: float-dot 3.8s ease-in-out infinite 2s; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="340" rx="16" fill="url(#bg-grad)" />
+  <rect width="1200" height="340" rx="16" fill="url(#cyber-grid)" />
+
+  <!-- Ambient Glow Blobs -->
+  <circle cx="1010" cy="170" r="160" fill="#7000FF" opacity="0.25" filter="url(#glow-heavy)" class="shimmer-glow" />
+  <circle cx="200" cy="80" r="120" fill="#00F0FF" opacity="0.12" filter="url(#glow-heavy)" />
+  <circle cx="650" cy="280" r="140" fill="#FF007A" opacity="0.12" filter="url(#glow-heavy)" />
+
+  <!-- Top Accent Neon Bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#primary-glow)" />
+
+  <!-- Interactive/Dynamic Grid lines -->
+  <path d="M 0 280 Q 300 240 600 290 T 1200 270" fill="none" stroke="#00F0FF" stroke-width="1.2" opacity="0.22" class="stream-line" />
+  <path d="M 0 60 Q 400 110 800 50 T 1200 90" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.2" class="stream-line-rev" />
+
+  <!-- ================= LEFT CONTENT AREA ================= -->
+  <!-- Category & Live Status Pill -->
+  <g transform="translate(80, 52)">
+    <rect width="260" height="30" rx="15" fill="url(#badge-grad)" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="16" cy="15" r="4.5" fill="#00F0FF" filter="url(#glow-subtle)">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="32" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">GPU-ACCELERATED VECTOR QUANT</text>
+  </g>
+
+  <!-- Main Title -->
+  <g transform="translate(80, 134)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="-1">
+      <tspan fill="url(#text-grad)">pyturboquant</tspan>
+      <tspan fill="#38BDF8">-</tspan>
+      <tspan fill="#00F0FF" filter="url(#glow-subtle)">gpu</tspan>
+    </text>
+  </g>
+
+  <!-- Tagline / Subtitle -->
+  <g transform="translate(80, 178)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#94A3B8" font-weight="400">
+      Data-oblivious online vector quantization with near-optimal distortion rate
+    </text>
+    <text y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" fill="#64748B" font-weight="400">
+      Fast PyTorch implementation for KV-cache, similarity search &amp; high-dim embeddings
+    </text>
+  </g>
+
+  <!-- Feature Tags / Metric Chips -->
+  <g transform="translate(80, 246)">
+    <!-- Tag 1: PyTorch / CUDA -->
+    <g transform="translate(0, 0)">
+      <rect width="128" height="34" rx="8" fill="#0F172A" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1.2" />
+      <path d="M 16 17 L 22 10 L 28 17 L 22 24 Z" fill="#00F0FF" opacity="0.8" />
+      <text x="36" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#E2E8F0">PyTorch CUDA</text>
+    </g>
+
+    <!-- Tag 2: Zero Training -->
+    <g transform="translate(142, 0)">
+      <rect width="138" height="34" rx="8" fill="#0F172A" stroke="#7000FF" stroke-opacity="0.5" stroke-width="1.2" />
+      <circle cx="18" cy="17" r="4" fill="#A78BFA" />
+      <text x="32" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#E2E8F0">Data-Oblivious</text>
+    </g>
+
+    <!-- Tag 3: 1-8 Bit MSE / Prod -->
+    <g transform="translate(294, 0)">
+      <rect width="128" height="34" rx="8" fill="#0F172A" stroke="#FF007A" stroke-opacity="0.4" stroke-width="1.2" />
+      <text x="14" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#F43F5E">1-8 Bit</text>
+      <text x="56" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#E2E8F0">Quant</text>
+    </g>
+
+    <!-- Tag 4: ICLR 2026 -->
+    <g transform="translate(436, 0)">
+      <rect width="112" height="34" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.2" />
+      <text x="16" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#94A3B8">ICLR 2026</text>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT DYNAMIC GRAPHIC ================= -->
+  <g class="floating-container">
+    <!-- Center coordinate: (1010, 170) -->
+    
+    <!-- Outer Orbit 1 (Clockwise) -->
+    <g class="spin-clock">
+      <circle cx="1010" cy="170" r="105" fill="none" stroke="#38BDF8" stroke-width="1" stroke-dasharray="8 12" opacity="0.35" />
+      <circle cx="1115" cy="170" r="4.5" fill="#00F0FF" filter="url(#glow-subtle)" />
+      <circle cx="905" cy="170" r="3.5" fill="#38BDF8" opacity="0.7" />
+    </g>
+
+    <!-- Outer Orbit 2 (Counter-Clockwise) -->
+    <g class="spin-counter">
+      <ellipse cx="1010" cy="170" rx="125" ry="55" fill="none" stroke="#A78BFA" stroke-width="1.2" stroke-dasharray="14 10" opacity="0.45" />
+      <circle cx="1135" cy="170" r="5" fill="#FF007A" filter="url(#glow-subtle)" />
+      <circle cx="885" cy="170" r="4" fill="#7000FF" filter="url(#glow-subtle)" />
+    </g>
+
+    <!-- Dynamic Pulsing Wave Ring -->
+    <circle cx="1010" cy="170" r="58" fill="none" stroke="#00F0FF" opacity="0.6" class="pulse-ring-anim" />
+
+    <!-- Core Isometric Tensor Cube / Quantization Cell -->
+    <g transform="translate(1010, 170)">
+      <!-- Central Core Glow -->
+      <circle cx="0" cy="0" r="42" fill="url(#tensor-pulse)" filter="url(#glow-heavy)" opacity="0.75" />
+
+      <!-- Isometric Cube Wireframe -->
+      <!-- Top Face -->
+      <polygon points="0,-42 36,-21 0,0 -36,-21" fill="#00F0FF" fill-opacity="0.35" stroke="#38BDF8" stroke-width="1.8" />
+      <!-- Left Face -->
+      <polygon points="-36,-21 0,0 0,42 -36,21" fill="#7000FF" fill-opacity="0.45" stroke="#A78BFA" stroke-width="1.8" />
+      <!-- Right Face -->
+      <polygon points="0,0 36,-21 36,21 0,42" fill="#FF007A" fill-opacity="0.3" stroke="#F43F5E" stroke-width="1.8" />
+
+      <!-- Inner Coordinate Axes -->
+      <line x1="0" y1="0" x2="0" y2="-42" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+      <line x1="0" y1="0" x2="-36" y2="21" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+      <line x1="0" y1="0" x2="36" y2="21" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+
+      <!-- Center Spark -->
+      <circle cx="0" cy="0" r="4" fill="#FFFFFF" filter="url(#glow-subtle)">
+        <animate attributeName="r" values="3;5.5;3" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Floating Quantization Vector Dots -->
+    <g class="particle-1">
+      <circle cx="940" cy="95" r="3.5" fill="#00F0FF" filter="url(#glow-subtle)" />
+      <line x1="940" y1="95" x2="980" y2="135" stroke="#00F0FF" stroke-width="0.8" opacity="0.35" stroke-dasharray="3 3" />
+    </g>
+    <g class="particle-2">
+      <circle cx="1080" cy="85" r="4" fill="#FF007A" filter="url(#glow-subtle)" />
+      <line x1="1080" y1="85" x2="1035" y2="135" stroke="#FF007A" stroke-width="0.8" opacity="0.35" stroke-dasharray="3 3" />
+    </g>
+    <g class="particle-3">
+      <circle cx="1090" cy="250" r="3" fill="#38BDF8" filter="url(#glow-subtle)" />
+      <line x1="1090" y1="250" x2="1040" y2="205" stroke="#38BDF8" stroke-width="0.8" opacity="0.35" stroke-dasharray="3 3" />
+    </g>
+    <g class="particle-1">
+      <circle cx="920" cy="235" r="3" fill="#A78BFA" filter="url(#glow-subtle)" />
+      <line x1="920" y1="235" x2="975" y2="200" stroke="#A78BFA" stroke-width="0.8" opacity="0.35" stroke-dasharray="3 3" />
+    </g>
+  </g>
+
+  <!-- Bottom Border Highlight -->
+  <rect x="0" y="337" width="1200" height="3" fill="url(#primary-glow)" opacity="0.6" />
+</svg>
