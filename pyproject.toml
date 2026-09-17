@@ -48,10 +48,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pyturboquant/pyturboquant-gpu"
-Documentation = "https://github.com/pyturboquant/pyturboquant-gpu#readme"
-Repository = "https://github.com/pyturboquant/pyturboquant-gpu"
-Issues = "https://github.com/pyturboquant/pyturboquant-gpu/issues"
+Homepage = "https://github.com/ishandutta2007/pyturboquant-gpu"
+Documentation = "https://github.com/ishandutta2007/pyturboquant-gpu#readme"
+Repository = "https://github.com/ishandutta2007/pyturboquant-gpu"
+Issues = "https://github.com/ishandutta2007/pyturboquant-gpu/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
