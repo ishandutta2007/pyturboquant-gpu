@@ -173,3 +173,12 @@ Every bit of support helps keep open-source projects thriving! ✨
 
 Apache 2.0
 
+
+## ⭐ Star History
+
+<a href="https://star-history.com/#ishandutta2007/pyturboquant-gpu&Timeline" align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ishandutta2007_pyturboquant-gpu_growth.svg">
+    <img alt="Star History Chart" src="assets/ishandutta2007_pyturboquant-gpu_growth.svg">
+  </picture>
+</a>
