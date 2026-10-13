@@ -148,7 +148,23 @@ pip install pyturboquant-cpu
 
 ---
 
-##  Star History
+## 💖 Support
+
+Thank you for using and exploring **`pyturboquant-gpu`**! 🙏
+
+If this project has been helpful to you, please consider supporting its development:
+
+- ⭐ **Star this repository** on GitHub to show your appreciation and help others discover it!
+- 🍴 **Fork and share** it with fellow developers, researchers, and open-source communities.
+- ☕ **Buy me a coffee / Sponsor:** Support ongoing maintenance and new features through the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/ishandutta2007)
+
+Every bit of support helps keep open-source projects thriving! ✨
+
+---
+
+## ⭐ Star History
 [![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/pyturboquant-gpu&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/pyturboquant-gpu&type=date&legend=top-left)
 
 ---
